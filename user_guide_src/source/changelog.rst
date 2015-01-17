@@ -13,7 +13,7 @@ Release Date: Not Released
 
 -  General Changes
 
-   -  PHP 5.1.6 is no longer supported. CodeIgniter now requires PHP 5.2.4.
+   -  PHP 5.1.6 is no longer supported. CodeIgniter now requires PHP 5.2.4 and recommends PHP 5.4+ or newer to be used.
    -  Changed filenaming convention (class file names now must be Ucfirst and everything else in lowercase).
    -  Changed the default database driver to 'mysqli' (the old 'mysql' driver is DEPRECATED).
    -  ``$_SERVER['CI_ENV']`` can now be set to control the ``ENVIRONMENT`` constant.
@@ -336,7 +336,7 @@ Release Date: Not Released
       -  Class properties *wm_font_color*, *wm_shadow_color* and *wm_use_drop_shadow* are now protected, to avoid breaking the ``text_watermark()`` method if they are set manually after initialization.
       -  If property *maintain_ratio* is set to TRUE, ``image_reproportion()`` now doesn't need both width and height to be specified.
       -  Property *maintain_ratio* is now taken into account when resizing images using ImageMagick library.
-      -  Added support for maintaining transparency for PNG images in method ``text_watermark()``.
+      -  Added support for maintaining transparency for PNG images when watermarking.
       -  Added a **file_permissions** setting.
 
    -  :doc:`Form Validation Library <libraries/form_validation>` changes include:
