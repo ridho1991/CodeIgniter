@@ -41,9 +41,6 @@ application/config/config.php file and setting this::
 
 	$config['global_xss_filtering'] = TRUE;
 
-.. note:: If you use the form validation class, it gives you the option of
-	XSS filtering as well.
-
 An optional second parameter, *is_image*, allows this function to be used
 to test images for potential XSS attacks, useful for file upload
 security. When this second parameter is set to TRUE, instead of
@@ -110,9 +107,9 @@ Regular expressions are also supported (case-insensitive)::
 Class Reference
 ***************
 
-.. class:: CI_Security
+.. php:class:: CI_Security
 
-	.. method:: xss_clean($str[, $is_image = FALSE])
+	.. php:method:: xss_clean($str[, $is_image = FALSE])
 
 		:param	mixed	$str: Input string or an array of strings
 		:returns:	XSS-clean data
@@ -121,7 +118,7 @@ Class Reference
 		Tries to remove XSS exploits from the input data and returns the cleaned string.
 		If the optional second parameter is set to true, it will return boolean TRUE if the image is safe to use and FALSE if malicious data was detected in it.
 
-	.. method:: sanitize_filename($str[, $relative_path = FALSE])
+	.. php:method:: sanitize_filename($str[, $relative_path = FALSE])
 
 		:param	string	$str: File name/path
 		:param	bool	$relative_path: Whether to preserve any directories in the file path
@@ -140,14 +137,14 @@ Class Reference
 
 			$filename = $this->security->sanitize_filename($this->input->post('filename'), TRUE);
 
-	.. method:: get_csrf_token_name()
+	.. php:method:: get_csrf_token_name()
 
 		:returns:	CSRF token name
 		:rtype:	string
 
 		Returns the CSRF token name (the ``$config['csrf_token_name']`` value).
 
-	.. method:: get_csrf_hash()
+	.. php:method:: get_csrf_hash()
 
 		:returns:	CSRF hash
 		:rtype:	string
@@ -155,7 +152,7 @@ Class Reference
 		Returns the CSRF hash value. Useful in combination with ``get_csrf_token_name()``
 		for manually building forms or sending valid AJAX POST requests.
 
-	.. method:: entity_decode($str[, $charset = NULL])
+	.. php:method:: entity_decode($str[, $charset = NULL])
 
 		:param	string	$str: Input string
 		:param	string	$charset: Character set of the input string
@@ -167,7 +164,7 @@ Class Reference
 
 		If the ``$charset`` parameter is left empty, then your configured ``$config['charset']`` value will be used.
 
-	.. method:: get_random_bytes($length)
+	.. php:method:: get_random_bytes($length)
 
 		:param	int	$length: Output length
 		:returns:	A binary stream of random bytes or FALSE on failure
